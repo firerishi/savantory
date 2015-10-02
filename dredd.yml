@@ -1,0 +1,27 @@
+reporter: apiary
+custom:
+  apiaryApiKey: 5a658e5f4b4e9dcb7bc17875672eb544
+  apiaryApiName: savantory
+dry-run: null
+hookfiles: null
+language: nodejs
+sandbox: false
+server: node app.js
+server-wait: 3
+init: false
+names: false
+only: []
+output: []
+header: []
+sorted: false
+user: null
+inline-errors: false
+details: false
+method: []
+color: true
+level: info
+timestamp: false
+silent: false
+path: []
+blueprint: apiary.apib
+endpoint: 'http://localhost:3000'
