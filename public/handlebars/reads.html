@@ -1,0 +1,12 @@
+<ul class="grid effect-2" id="grid">
+  {{#unless book}}
+  <p class="loader-text">Loading...</p>
+  {{/unless}}
+  {{#each book}}
+  {{#if imageURL}}
+  <li>
+    <a href=''><img src='{{imageURL}}'/></a>
+  </li>
+  {{/if}}  
+  {{/each}}
+</ul>

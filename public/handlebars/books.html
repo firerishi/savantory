@@ -1,0 +1,36 @@
+<h1 class="page-header">Books</h1>
+
+<h4>I'am Reading...</h4>
+<ul class="grid effect-2" id="grid">
+  {{#unless book}}
+    <p class="loader-text">Loading...</p>
+  {{/unless}}
+  {{#each book}}
+    {{#ifequal status "reading" this}}
+    <li>
+      {{#if imageURL}}
+        <a href=''><img src='{{imageURL}}'/></a>
+      {{/if}}  
+    </li>
+    {{/ifequal}}
+  {{/each}}
+</ul>
+
+<!-- <h4>Yet to Read</h4> -->
+
+<h4>I've Read.</h4>
+<ul class="grid effect-2" id="grid">
+  {{#unless book}}
+    <p class="loader-text">Loading...</p>
+  {{/unless}}
+  {{#each book}}
+    {{#ifequal status "read" this}}
+      {{#if imageURL}}
+      <li>
+        <a href=''><img src='{{imageURL}}'/></a>
+      </li>
+      {{/if}}  
+    {{/ifequal}}
+  {{/each}}
+</ul>
+

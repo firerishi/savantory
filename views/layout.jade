@@ -1,7 +1,27 @@
 doctype html
 html
   head
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(name="description", content="Savantory Scholar Book Reading Well-read")
+
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    
+    link(rel='stylesheet', href='css/layers.min.css', media='screen')
+    link(rel='stylesheet', href='css/font-awesome.min.css', media='screen')
+    link(rel='stylesheet', href='css/style_beatle.css', media='screen')
+    link(rel='stylesheet', href='css/landing.css', media='screen')
+    link(href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400italic,700italic,400,700', rel='stylesheet', type='text/css')  
+
+    link(rel="shortcut icon", href="/img/Srini_favicon.ico", type="image/x-icon")
+    link(rel="icon", href="/img/Srini_favicon.ico", type="image/x-icon")
+
+    script(src='/js/libs/modernizr.custom.js')
   body
     block content
+
+    script(data-main='/js/main',src='/js/libs/require/require.js')
+    script(src="js/libs/jquery/jquery-min.js")
+    script(src="https://maps.googleapis.com/maps/api/js?sensor=false")   
+    script(src="js/plugins.js")
+
+    script(src='/js/analytics/analyticsSetup.js')

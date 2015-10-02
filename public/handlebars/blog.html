@@ -1,0 +1,62 @@
+
+<!-- <link rel="stylesheet" href="../css/component.css"> -->
+<div class="blog">
+<h1 class="page-header">Blog</h1>
+{{#unless posts}}
+    <p class="loader-text">Loading...</p>
+  {{/unless}}
+</div>
+
+<ul class="blog-list">
+  
+  {{#each posts}}
+  	<span class="date">{{date}}</span>
+  	{{#ifequal type 'link' this}}
+    <li class="link">
+    		<a href='{{url}}'>
+    			<span class="glyphicon glyphicon-link"></span>
+    			<h2>{{title}}</h2>
+      	</a>
+      	<p>{{{description}}}</p>
+    </li>
+    {{/ifequal}}
+
+    {{#ifequal type 'quote' this}}
+    <li class="quote">
+			<span class="glyphicon glyphicon-bookmark"></span>
+			<h4>"{{text}}"</h4>
+  		<p>{{{source}}}</p>
+    </li>
+    {{/ifequal}}
+
+    {{#ifequal type 'text' this}}
+    <li class="text">
+  		<span class="glyphicon glyphicon-bullhorn"></span>
+  		<h2>{{title}}</h2>
+    	<p>{{{body}}}</p>
+    </li>
+    {{/ifequal}}
+
+    {{#ifequal type 'photo' this}}
+    <li class="photo">
+			<span class="glyphicon glyphicon-camera"></span>
+			<h2>{{{caption}}}</h2>
+			{{#each photos}}
+			<img src='{{original_size.url}}'>
+			{{/each}}
+    </li>
+    {{/ifequal}}
+
+    {{#ifequal type 'video' this}}
+    <li class="video">
+			<span class="glyphicon glyphicon-film"></span>
+			<a href='{{post_url}}'>
+				<h2>{{{caption}}}</h2>
+			</a>
+    </li>
+    {{/ifequal}}
+
+
+
+  {{/each}}
+</ul>

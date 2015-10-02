@@ -1,10 +1,14 @@
 extends layout
 
 block content
+  a(href="/") Savantory
+
   h1.
     Book List
 
   ul
     each book, i in booklist
       li
-        span #{book.name}
+        span #{book.name} -- #{book.author}
+
+  a(href="/books/addbook") Add Book

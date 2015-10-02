@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  a(href="/") Savantory
+
+  h1= title
+  
+  form#formAddUser(name="addbook",method="post",action="/api/books")
+    input#inputUserName(type="text", placeholder="name", name="name")
+    input#inputUserEmail(type="text", placeholder="author", name="author")
+    button#btnSubmit(type="submit") submit

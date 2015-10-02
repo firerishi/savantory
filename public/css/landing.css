@@ -1,0 +1,24 @@
+#profile-pic {
+  height: 170px;
+  width: 170px;
+  border-radius: 50%;
+  border: 10px solid rgba(239, 239, 239, 0.7);
+  display: inline-block;
+}
+.intro-item .caption {
+  top: 200px;
+}
+#intro-wrap {
+  height: 100vh;
+}
+#intro-wrap .more a {
+  opacity: 1;
+}
+/*----------------------------------------------------------------
+    320px Breakpoint - Fix some mockups
+----------------------------------------------------------------*/
+@media only screen and (max-width: 400px) {
+  .intro-item .caption {
+    top: 50px;
+  }
+}
