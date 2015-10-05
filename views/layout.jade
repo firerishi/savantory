@@ -8,8 +8,8 @@ html
     
     link(rel='stylesheet', href='css/layers.min.css', media='screen')
     link(rel='stylesheet', href='css/font-awesome.min.css', media='screen')
-    link(rel='stylesheet', href='css/style_beatle.css', media='screen')
     link(rel='stylesheet', href='bower_components/foundation/css/foundation.css', media='screen')
+    link(rel='stylesheet', href='css/style_beatle.css', media='screen')
     link(rel='stylesheet', href='css/landing.css', media='screen')
     link(href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400italic,700italic,400,700', rel='stylesheet', type='text/css')  
 
@@ -20,8 +20,8 @@ html
   body
     block content
 
-    script(data-main='/js/main',src='/js/libs/require/require.js')
-    script(src="js/libs/jquery/jquery-min.js")
+    script(data-main='/js/main',src='bower_components/requirejs/require.js')
+    script(src="bower_components/jquery/dist/jquery.min.js")
     script(src="https://maps.googleapis.com/maps/api/js?sensor=false")   
     script(src="js/plugins.js")
 
