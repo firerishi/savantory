@@ -1,23 +1,38 @@
-#profile-pic {
-	height: 170px;
-	width: 170px;
-	border-radius: 50%;
-	border: 10px solid rgba(239, 239, 239, 0.7);
-	display: inline-block;
-}
+@grey-darken-2: #616161;
 
-.intro-item {
-	.caption {
-		top: 200px;
-	}
-}
-
-#intro-wrap {
+#main-content {
+	background: #f7f7f7;
 	height: 100vh;
-	.more a {
-		opacity: 1;
+}
+
+nav {
+	.brand-logo {
+		font-family: 'Roboto Slab';
+		font-weight: 200;
+		padding-left: 1%;
 	}
 }
+
+.landing {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background: url('/img/wood_pattern.png');
+}
+.landing-announcer {
+	h1 {
+		color: @grey-darken-2;
+		font-family: 'Roboto Slab';
+		font-weight: 200;
+	}
+	p {
+		font-family: 'Roboto';
+	}
+}
+
+
 /*----------------------------------------------------------------
     320px Breakpoint - Fix some mockups
 ----------------------------------------------------------------*/
