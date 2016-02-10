@@ -1,9 +1,17 @@
+footer {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
 #main-content {
-  background: #f7f7f7;
+  background: #EFEFEF;
   height: 100vh;
 }
 nav .brand-logo {
   font-family: 'Roboto Slab';
+  font-size: 20px;
   font-weight: 200;
   padding-left: 1%;
 }
@@ -16,12 +24,13 @@ nav .brand-logo {
   background: url('/img/wood_pattern.png');
 }
 .landing-announcer h1 {
-  color: #616161;
+  color: #474747;
   font-family: 'Roboto Slab';
   font-weight: 200;
 }
 .landing-announcer p {
   font-family: 'Roboto';
+  font-size: 16px;
 }
 /*----------------------------------------------------------------
     320px Breakpoint - Fix some mockups
