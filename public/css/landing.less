@@ -1,6 +1,8 @@
 @grey-darken-2: #474747;
+@primary-purple: #735F96;
 
 footer {
+	background: @primary-purple;
   position: absolute;
   width: 100%;
   left: 0;
@@ -9,15 +11,16 @@ footer {
 }
 
 #main-content {
-	background: #EFEFEF;
+	background: #EAEAEA;
 	height: 100vh;
 }
 
 nav {
 	.brand-logo {
+		color: @primary-purple;
 		font-family: 'Roboto Slab';
 		font-size: 20px;
-		font-weight: 200;
+		font-weight: 400;
 		padding-left: 1%;
 	}
 }
@@ -32,9 +35,9 @@ nav {
 }
 .landing-announcer {
 	h1 {
-		color: @grey-darken-2;
+		color: @primary-purple;
 		font-family: 'Roboto Slab';
-		font-weight: 200;
+		font-weight: 400;
 	}
 	p {
 		font-family: 'Roboto';
