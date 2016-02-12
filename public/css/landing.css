@@ -1,17 +1,21 @@
+/*----------------------------------------------------------------
+    320px Breakpoint - Fix some mockups
+----------------------------------------------------------------*/
 footer {
-  background: #735F96;
+  background: #735f96;
   position: absolute;
   width: 100%;
   left: 0;
   right: 0;
   bottom: 0;
+  margin-top: 0;
 }
 #main-content {
   background: #EAEAEA;
   height: 100vh;
 }
 nav .brand-logo {
-  color: #735F96;
+  color: #735f96;
   font-family: 'Roboto Slab';
   font-size: 20px;
   font-weight: 400;
@@ -26,13 +30,15 @@ nav .brand-logo {
   background: url('/img/wood_pattern.png');
 }
 .landing-announcer h1 {
-  color: #735F96;
+  color: #735f96;
   font-family: 'Roboto Slab';
   font-weight: 400;
 }
 .landing-announcer p {
+  color: #575757;
   font-family: 'Roboto';
-  font-size: 16px;
+  font-size: 20px;
+  font-weight: 300;
 }
 /*----------------------------------------------------------------
     320px Breakpoint - Fix some mockups
@@ -42,3 +48,5 @@ nav .brand-logo {
     top: 50px;
   }
 }
+
+/* This beautiful CSS-File has been crafted with LESS (lesscss.org) and compiled by simpLESS (wearekiss.com/simpless) */
