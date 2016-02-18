@@ -39,17 +39,29 @@ define([
 
       $(this.el).removeClass();
 
-      var template = Handlebars.compile(homeHB);
-      $(this.el).html(template(window.svntry));
-
-      this.linkify('a.threeD');
-
+      var ref = new Firebase("https://savantory.firebaseio.com");
+      ref.onAuth(this.authDataCallback);
     },
 
     initialize: function() {
       this.supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined|| document.body.style['MozPerspective'] !== undefined;
+    },
 
-      
+    authDataCallback: function(authData) {
+      var that = this;
+      if (authData) {
+        console.log("User " + authData.uid + " is logged in with " + authData.provider);
+        this.user = {
+          displayName: authData.facebook.displayName,
+          firstName: authData.facebook.cachedUserProfile.first_name
+        };
+        var template = Handlebars.compile(homeHB);
+        console.log(this.user);
+        $("#main-content").html(template(this.user));
+      } else {
+        console.log("User is logged out");
+        window.location.hash = '';
+      }
     }
   });
 

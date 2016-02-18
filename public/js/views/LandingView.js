@@ -16,20 +16,22 @@ define([
 
     loginFacebook: function() {
       var ref = new Firebase("https://savantory.firebaseio.com");
-      ref.authWithOAuthPopup("facebook", function(error, authData) {
-        if (error) {
-          console.log("Login Failed!", error);
-        } else {
-          console.log("Authenticated successfully with payload:", authData);
+      ref.onAuth(function(authData) {
+
+        if (authData) {
           window.location.hash = "home";
-          window.svntry = {
-            user: {
-              displayName: authData.facebook.displayName,
-              firstName: authData.facebook.cachedUserProfile.first_name
+        } else {
+          ref.authWithOAuthPopup("facebook", function(error, authData) {
+            if (error) {
+              console.log("Login Failed!", error);
+            } else {
+              console.log("Authenticated successfully with payload:", authData);
+              window.location.hash = "home";
             }
-          }
+          });
         }
       });
+      
     },
 
     render: function(){
