@@ -3,7 +3,7 @@ define([
   'underscore',
   'backbone',
   'handlebars',
-  'text!tpl/home.html'
+  'text!tpl/landing.html'
 ], function($, _, Backbone, Handlebars, homeHB){
 
   var BookView = Backbone.View.extend({

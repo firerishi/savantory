@@ -21,6 +21,9 @@ nav .brand-logo {
   font-weight: 400;
   padding-left: 1%;
 }
+nav ul a {
+  color: #777;
+}
 .landing {
   position: absolute;
   left: 0;
@@ -43,6 +46,12 @@ nav .brand-logo {
 .account-auth {
   margin-top: 30px;
 }
+.header-tabs li {
+  display: inline-block;
+  font-size: 40px;
+  font-weight: 200;
+  margin: 10px 20px;
+}
 /*----------------------------------------------------------------
     320px Breakpoint - Fix some mockups
 ----------------------------------------------------------------*/
@@ -51,5 +60,3 @@ nav .brand-logo {
     top: 50px;
   }
 }
-
-/* This beautiful CSS-File has been crafted with LESS (lesscss.org) and compiled by simpLESS (wearekiss.com/simpless) */
