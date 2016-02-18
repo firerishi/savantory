@@ -40,7 +40,7 @@ define([
       $(this.el).removeClass();
 
       var template = Handlebars.compile(homeHB);
-      $(this.el).html(template());
+      $(this.el).html(template(window.svntry));
 
       this.linkify('a.threeD');
 
