@@ -13,7 +13,7 @@ define([
 
       'home': 'showHome',
       'book': 'showBooks',
-      '*actions': 'defaultAction'
+      '': 'defaultAction'
 
     }
   });

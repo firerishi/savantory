@@ -1,15 +1,20 @@
 <div class="navbar-fixed">
+  <ul id="dropdown1" class="dropdown-content">
+    <li><a href="#!">profile</a></li>
+    <li><a href="#!">logout</a></li>
+  </ul>
   <nav>
     <div class="nav-wrapper grey lighten-5">
       <a href="#" class="brand-logo">savantory</a>
       <ul class="right hide-on-med-and-down">
         <li>
-          <a>
+          <a class="dropdown-button" data-activates="dropdown1">
             <i class="material-icons left">person</i>
             {{firstName}}
           </a>
         </li>
       </ul>
+      
     </div>
   </nav>
 </div>
@@ -19,6 +24,17 @@
     <ul class="header-tabs">
       <li>Reading</li>
       <li>Read</li>
+    </ul>
+
+
+    
+
+    <!-- Dropdown Structure -->
+    <ul id='dropdown1' class='dropdown-content'>
+      <li><a href="#!">one</a></li>
+      <li><a href="#!">two</a></li>
+      <li class="divider"></li>
+      <li><a href="#!">three</a></li>
     </ul>
   </div>
 </div>
