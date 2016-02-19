@@ -32,10 +32,14 @@ nav ul a {
   bottom: 0;
   background: url('/img/wood_pattern.png');
 }
+.landing-announcer img {
+  margin-top: 25px;
+}
 .landing-announcer h1 {
   color: #735f96;
   font-family: 'Roboto Slab';
-  font-weight: 400;
+  font-weight: 300;
+  margin-top: 0px;
 }
 .landing-announcer p {
   color: #575757;
@@ -51,6 +55,9 @@ nav ul a {
   font-size: 40px;
   font-weight: 200;
   margin: 10px 20px;
+}
+#dropdown-profile li a {
+  color: #7a7a7a;
 }
 /*----------------------------------------------------------------
     320px Breakpoint - Fix some mockups
