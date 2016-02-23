@@ -16,29 +16,37 @@ define([
 
       $(this.el).removeClass();
 
-      var ref = new Firebase("https://savantory.firebaseio.com");
-      ref.onAuth(this.authDataCallback);
+      this.ref.onAuth(this.authDataCallback);
     },
 
     initialize: function() {
-      this.supports3DTransforms =  document.body.style['webkitPerspective'] !== undefined|| document.body.style['MozPerspective'] !== undefined;
+      this.ref = new Firebase("https://savantory.firebaseio.com");
     },
 
     authDataCallback: function(authData) {
-      var that = this;
+      var that = this,
+        template = null,
+        ref = new Firebase("https://savantory.firebaseio.com");
+
       if (authData) {
-        console.log("User " + authData.uid + " is logged in with " + authData.provider);
         this.user = {
           displayName: authData.facebook.displayName,
           firstName: authData.facebook.cachedUserProfile.first_name
         };
-        var template = Handlebars.compile(homeHB);
-        console.log(this.user);
+        template = Handlebars.compile(homeHB);
         $("#main-content").html(template(this.user));
 
-         $('.dropdown-button').dropdown({
+        $('.dropdown-button').dropdown({
           belowOrigin: true
-         });
+        });
+
+        ref.child("users").child(authData.uid).set({
+          provider: authData.provider,
+          name: authData.facebook.displayName
+        });
+
+        this.currentUser = authData.uid;
+        console.log(this.currentUser);
       } else {
         console.log("User is logged out");
         window.location.hash = '';
