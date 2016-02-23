@@ -1,8 +1,5 @@
-/*----------------------------------------------------------------
-    320px Breakpoint - Fix some mockups
-----------------------------------------------------------------*/
 footer {
-  background: #735f96;
+  background: #735F96;
   position: absolute;
   width: 100%;
   left: 0;
@@ -12,10 +9,11 @@ footer {
 }
 #main-content {
   background: #EAEAEA;
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
 }
 nav .brand-logo {
-  color: #735f96;
+  color: #735F96;
   font-family: 'Roboto Slab';
   font-size: 20px;
   font-weight: 400;
@@ -36,7 +34,7 @@ nav ul a {
   margin-top: 25px;
 }
 .landing-announcer h1 {
-  color: #735f96;
+  color: #735F96;
   font-family: 'Roboto Slab';
   font-weight: 300;
   margin-top: 0px;
@@ -58,6 +56,10 @@ nav ul a {
 }
 #dropdown-profile li a {
   color: #7a7a7a;
+}
+.books-shelf-grid img {
+  height: 300px;
+  box-shadow: 0px 0px 20px #919191;
 }
 /*----------------------------------------------------------------
     320px Breakpoint - Fix some mockups
