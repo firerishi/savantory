@@ -57,7 +57,17 @@ nav ul a {
 #dropdown-profile li a {
   color: #7a7a7a;
 }
-.books-shelf-grid img {
+.books-shelf-grid .book-grid {
+  margin-bottom: 50px;
+}
+.books-shelf-grid .book-grid .book-placeholder {
+  background: #CDCDCD;
+  box-shadow: 0px 0px 20px #919191;
+  height: 300px;
+  text-align: center;
+  width: 200px;
+}
+.books-shelf-grid .book-grid img {
   height: 300px;
   box-shadow: 0px 0px 20px #919191;
 }
