@@ -28,53 +28,74 @@ define([
     },
 
     render: function(){
-
-      $('#main-nav li').removeClass('active');
-      $('#main-nav li a[href="#"]').parent().addClass('active');
-
-      $(this.el).removeClass();
-
-      this.ref.onAuth(this.authDataCallback);
+      this.auth();
     },
 
     initialize: function() {
       this.ref = new Firebase("https://savantory.firebaseio.com");
     },
 
-    authDataCallback: function(authData) {
+    auth: function() {
       var that = this,
         template = null,
         ref = new Firebase("https://savantory.firebaseio.com"),
-        SVNTRY = window.SVNTRY || {};
+        SVNTRY = window.SVNTRY || {},
+        user = {};
 
-      if (authData) {
-        this.user = {
-          displayName: authData.facebook.displayName,
-          firstName: authData.facebook.cachedUserProfile.first_name,
-          uid: authData.uid
-        };
+      ref.onAuth(function(authData) {
+
+        if (authData) {
+          ref.child("users").child(authData.uid).set({
+            provider: authData.provider,
+            name: authData.facebook.displayName
+          });
+
+          user = {
+            displayName: authData.facebook.displayName,
+            firstName: authData.facebook.cachedUserProfile.first_name,
+            uid: authData.uid
+          };
+          that.user = user;
+          that.renderBooks(user);
+
+        } else {
+          console.log("User is logged out");
+          window.location.hash = '';
+        }
+
+      });
+    },
+
+    renderBooks: function(user) {
+      var template = null,
+        ref = new Firebase("https://savantory.firebaseio.com"),
+        books = [];
+
+      //get books
+      console.log(this.user);
+      var refBooks = new Firebase("https://savantory.firebaseio.com/books/"+user.uid);
+      refBooks.on("child_added", function(snapshot, prevChildKey) {
+        var newPost = snapshot.val();
+        console.log("books: " + newPost.name);
+        books.push(newPost);
+        console.log(books);
+
         template = Handlebars.compile(homeHB);
-        $("#main-content").html(template(this.user));
+        $("#main-content").html(template({
+          user: user,
+          books: books
+        }));
 
         $('.dropdown-button').dropdown({
           belowOrigin: true
         });
 
         $('.modal-trigger').leanModal();
+      });
 
-        ref.child("users").child(authData.uid).set({
-          provider: authData.provider,
-          name: authData.facebook.displayName
-        });
 
-        this.currentUser = authData.uid;
-        SVNTRY.currentUser = authData.uid;
-        console.log(this.currentUser);
-      } else {
-        console.log("User is logged out");
-        window.location.hash = '';
-      }
     }
+
   });
 
   return BookView;

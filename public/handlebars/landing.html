@@ -28,7 +28,7 @@
         <li>
           <a class="dropdown-button" data-activates="dropdown-profile">
             <i class="material-icons left">person</i>
-            {{firstName}}
+            {{user.firstName}}
           </a>
         </li>
       </ul>
@@ -51,7 +51,14 @@
       <h4>Add</h4>
       <h6>Your own</h6>
     </div>
+    {{#each books}}
     <div class="col s4 center-align book-grid">
+      <img src="{{img_url}}">
+      <h5>{{name}}</h5> 
+      <h6>{{author}}</h6>
+    </div>
+    {{/each}}
+    <!-- <div class="col s4 center-align book-grid">
       <img src="http://ecx.images-amazon.com/images/I/41oEGC8oHgL._SX331_BO1,204,203,200_.jpg">
       <h4>Sapiens</h4> 
       <h6>Yuval Noah Harari</h6>
@@ -65,11 +72,11 @@
       <img src="http://ecx.images-amazon.com/images/I/516MzKld%2B%2BL._SX329_BO1,204,203,200_.jpg">
       <h4>Bold</h4>
       <h6>Peter Diamandis</h6>
-    </div>
+    </div> -->
   </div>
 </div>
 
-<div id="user-uid" style="display: none">{{uid}}</div>
+<div id="user-uid" style="display: none">{{user.uid}}</div>
 
 <div id="modal1" class="modal">
   <div class="modal-content">
