@@ -47,8 +47,7 @@
   </div>
   <div class="row books-shelf-grid">
     <div class="col s4 center-align book-grid">
-      <!-- <div class="book-placeholder"></div> -->
-      <a class="btn-floating btn-large waves-effect waves-light purple lighten-1 modal-trigger" href="#modal1"><i class="material-icons">add</i></a>
+      <a class="btn-floating btn-large waves-effect waves-light purple lighten-1 modal-trigger" href="#add-book-modal"><i class="material-icons">add</i></a>
       <h4>Add</h4>
       <h6>Your own</h6>
     </div>
@@ -59,29 +58,14 @@
       <h6>{{author}}</h6>
     </div>
     {{/each}}
-    <!-- <div class="col s4 center-align book-grid">
-      <img src="http://ecx.images-amazon.com/images/I/41oEGC8oHgL._SX331_BO1,204,203,200_.jpg">
-      <h4>Sapiens</h4> 
-      <h6>Yuval Noah Harari</h6>
-    </div>
-    <div class="col s4 center-align book-grid">
-      <img src="http://ecx.images-amazon.com/images/I/51hUQL08BGL._SX329_BO1,204,203,200_.jpg">
-      <h4>Elon Musk</h4>
-      <h6>Anthony</h6>
-    </div>
-    <div class="col s4 center-align book-grid">
-      <img src="http://ecx.images-amazon.com/images/I/516MzKld%2B%2BL._SX329_BO1,204,203,200_.jpg">
-      <h4>Bold</h4>
-      <h6>Peter Diamandis</h6>
-    </div> -->
   </div>
 </div>
 
 <div id="user-uid" style="display: none">{{user.uid}}</div>
 
-<div id="modal1" class="modal">
+<div id="add-book-modal" class="modal">
   <div class="modal-content">
-    <h4>Add Your Book</h4>
+    <h4>Add your Book</h4>
     <form class="col s12">
       <div class="row">
         <div class="input-field col s6">
@@ -91,6 +75,16 @@
         <div class="input-field col s6">
           <input id="book-author" type="text" class="validate">
           <label for="book-author">Author</label>
+        </div>
+      </div>
+      <div class="row read-state">
+        <div class="col s6 offset-s3 cntr center-align">
+          <h6>Reading</h6>
+          <div class="press">  
+            <input type="checkbox" id="read-book-checked" class="cbx hidden" checked/>
+            <label for="read-book-checked" class="lbl"></label>
+          </div>
+          <h6>Read</h6>
         </div>
       </div>
     </form>

@@ -96,6 +96,68 @@ nav {
   }
 }
 
+// Toggle checkbox
+[type="checkbox"]+label {
+  height: 20px;
+}
+[type="checkbox"]+label:before,
+[type="checkbox"]:checked+label:before {
+  display: none;
+}
+.lbl {
+  position: relative;
+  display: block;
+  height: 20px;
+  width: 44px;
+  background: #a5c4d4;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.lbl:after {
+  position: absolute;
+  left: -2px;
+  top: -3px;
+  display: block;
+  width: 26px;
+  height: 26px;
+  border-radius: 100px;
+  background: #8499b1;
+  box-shadow: 0px 3px 3px rgba(0,0,0,0.05);
+  content: '';
+  transition: all 0.3s ease;
+}
+.lbl:active:after {
+  transform: scale(1.15, 0.85);
+}
+.cbx:checked ~ label {
+  background: #b3a8c7;
+}
+.cbx:checked ~ label:after {
+  left: 20px;
+  background: #735f96;
+}
+.cntr {
+  // position: absolute;
+  // transform: translate(-50%, -50%);
+}
+.press {
+  margin-bottom: 40px;
+  display: inline;
+}
+.hidden {
+  display: none;
+}
+
+.read-state {
+  margin-top: 30px;
+  h6 {
+    display: inline;
+    margin: 10px;
+    vertical-align: super;
+  }
+}
+
 /*----------------------------------------------------------------
     320px Breakpoint - Fix some mockups
 ----------------------------------------------------------------*/

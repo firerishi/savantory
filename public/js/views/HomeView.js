@@ -17,13 +17,16 @@ define([
       var name = $('#book-name').val(),
         author = $('#book-author').val(),
         user = $('#user-uid').text(),
+        read = $('#read-book-checked').prop('checked'),
         that = this,
         ref = new Firebase("https://savantory.firebaseio.com"),
         SVNTRY = window.SVNTRY || {};
 
       ref.child("books").child(user).push({
         name: name,
-        author: author
+        author: author,
+        read: read,
+        reading: !read
       });
     },
 
@@ -76,9 +79,9 @@ define([
       var refBooks = new Firebase("https://savantory.firebaseio.com/books/"+user.uid);
       refBooks.on("child_added", function(snapshot, prevChildKey) {
         var newPost = snapshot.val();
-        console.log("books: " + newPost.name);
+        // console.log("books: " + newPost.name);
         books.push(newPost);
-        console.log(books);
+        // console.log(books);
 
         template = Handlebars.compile(homeHB);
         $("#main-content").html(template({
