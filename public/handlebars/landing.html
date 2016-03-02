@@ -56,6 +56,12 @@
       <img src="{{img_url}}">
       <h5>{{name}}</h5> 
       <h6>{{author}}</h6>
+      {{#if read}}
+      <div class="chip deep-purple darken-1">Read</div>
+      {{/if}}
+      {{#if reading}}
+      <div class="chip orange darken-1">Reading</div>
+      {{/if}}
     </div>
     {{/each}}
   </div>

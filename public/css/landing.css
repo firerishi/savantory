@@ -49,6 +49,7 @@ nav ul a {
   margin-top: 30px;
 }
 .header-tabs li {
+  border-bottom: 1px solid #ababab;
   display: inline-block;
   font-size: 40px;
   font-weight: 200;
@@ -59,6 +60,18 @@ nav ul a {
 }
 .books-shelf-grid .book-grid {
   margin-bottom: 50px;
+}
+.books-shelf-grid .book-grid h5 {
+  color: rgba(39, 39, 39, 0.87);
+  font-weight: 300;
+}
+.books-shelf-grid .book-grid h6 {
+  color: #898989;
+  margin-bottom: 10px;
+}
+.books-shelf-grid .book-grid .chip {
+  color: #f7f7f7;
+  font-weight: 300;
 }
 .books-shelf-grid .book-grid .book-placeholder {
   background: #CDCDCD;

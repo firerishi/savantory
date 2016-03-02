@@ -75,7 +75,7 @@ define([
         books = [];
 
       //get books
-      console.log(this.user);
+      // console.log(this.user);
       var refBooks = new Firebase("https://savantory.firebaseio.com/books/"+user.uid);
       refBooks.on("child_added", function(snapshot, prevChildKey) {
         var newPost = snapshot.val();
