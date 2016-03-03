@@ -47,23 +47,16 @@
     <a class="btn-floating btn-large waves-effect waves-light purple lighten-1 modal-trigger" href="#add-book-modal"><i class="material-icons">add</i></a>
   </div>
   <div class="row books-shelf-grid">
-    <!-- <div class="col s4 center-align book-grid">
-      <a class="btn-floating btn-large waves-effect waves-light purple lighten-1 modal-trigger" href="#add-book-modal"><i class="material-icons">add</i></a>
-      <h4>Add</h4>
-      <h6>Your own</h6>
-    </div> -->
-    {{#each books}}
-    <div class="col s3 center-align book-grid">
+    <div class="book-grid">
+      {{#each books}}
+      <div class="col s3 center-align grid-item">
       <div class="card">
         <div class="card-image">
           <img src="{{img_url}}">
         </div>
         <div class="card-content">
-          <!-- <span class="card-title">Card Title</span> -->
           <h5 class="card-title">{{name}}</h5> 
           <h6>{{author}}</h6>
-          <!-- <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p> -->
         </div>
         <div class="card-action">
           {{#if read}}
@@ -72,11 +65,39 @@
           {{#if reading}}
           <div class="chip orange darken-1">Reading</div>
           {{/if}}
-          <!-- <a href="#">This is a link</a> -->
+        </div>
+      </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+  <div class="row books-shelf-grid">
+    <!-- <div class="col s4 center-align book-grid">
+      <a class="btn-floating btn-large waves-effect waves-light purple lighten-1 modal-trigger" href="#add-book-modal"><i class="material-icons">add</i></a>
+      <h4>Add</h4>
+      <h6>Your own</h6>
+    </div> -->
+    <!-- {{#each books}}
+    <div class="col s3 center-align book-grid">
+      <div class="card">
+        <div class="card-image">
+          <img src="{{img_url}}">
+        </div>
+        <div class="card-content">
+          <h5 class="card-title">{{name}}</h5> 
+          <h6>{{author}}</h6>
+        </div>
+        <div class="card-action">
+          {{#if read}}
+          <div class="chip deep-purple darken-1">Read</div>
+          {{/if}}
+          {{#if reading}}
+          <div class="chip orange darken-1">Reading</div>
+          {{/if}}
         </div>
       </div>
     </div>
-    {{/each}}
+    {{/each}} -->
   </div>
 </div>
 

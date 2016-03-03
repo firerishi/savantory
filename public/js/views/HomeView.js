@@ -4,7 +4,8 @@ define([
   'backbone',
   'handlebars',
   'text!tpl/landing.html',
-], function($, _, Backbone, Handlebars, homeHB){
+  'masonry'
+], function($, _, Backbone, Handlebars, homeHB, Masonry){
 
   var BookView = Backbone.View.extend({
     el: "#main-content",
@@ -88,6 +89,10 @@ define([
           user: user,
           books: books
         }));
+
+        new Masonry('.book-grid', {
+          itemSelector: '.grid-item'
+        });
 
         $('.dropdown-button').dropdown({
           belowOrigin: true

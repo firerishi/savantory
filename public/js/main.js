@@ -6,6 +6,7 @@
 require.config({
   paths: {
     jquery: '../bower_components/jquery/dist/jquery.min',
+    masonry: '../bower_components/masonry/dist/masonry.pkgd',
     materialize : '../bower_components/Materialize/dist/js/materialize',
     hammer : '../bower_components/Materialize/js/hammer.min',
     velocity : '../bower_components/Materialize/js/velocity.min',
@@ -24,6 +25,9 @@ require.config({
       },
       'jquery': {
           exports: '$'
+      },
+      'masonry': {
+        deps: ['jquery']
       }
   }
 });
@@ -32,8 +36,8 @@ require([
   // Load our app module and pass it to our definition function
   'app',
   'jquery',
-  'materialize'
-
+  'materialize',
+  'masonry'
 ], function(App){
   // The "app" dependency is passed in as "App"
   // Again, the other dependencies passed in are not "AMD" therefore don't pass a parameter to this function
