@@ -18,13 +18,13 @@
             <i class="material-icons left">notifications_active</i>
             Feed
           </a>
-        </li>
-        <li>
-          <a class="dropdown-button">
-            <i class="material-icons left">library_books</i>
-            Books
-          </a>
         </li> -->
+        <li>
+          <a class="dropdown-button" href="#home">
+            <i class="material-icons left">library_books</i>
+            Bookshelf
+          </a>
+        </li>
         <li>
           <a class="dropdown-button" data-activates="dropdown-profile">
             <i class="material-icons left">person</i>
@@ -39,12 +39,16 @@
 
 <div class="container">
   <div class="row center-align">
+    <div class="col s7 left-align">
     <ul class="header-tabs">
       <li>Bookshelf</li>
       <!-- <li>Reading</li>
       <li>Read</li> -->
     </ul>
-    <a class="btn-floating btn-large waves-effect waves-light purple lighten-1 modal-trigger" href="#add-book-modal"><i class="material-icons">add</i></a>
+    </div>
+    <div class="col s5 right-align">
+      <a id="btn-add-book" class="btn-floating btn-large waves-effect waves-light purple lighten-1 modal-trigger" href="#add-book-modal"><i class="material-icons">add</i></a>
+    </div>
   </div>
   <div class="row books-shelf-grid">
     <div class="book-grid">

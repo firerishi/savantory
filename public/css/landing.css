@@ -48,12 +48,15 @@ nav ul a {
 .account-auth {
   margin-top: 30px;
 }
+#btn-add-book {
+  margin: 35px 0px;
+}
 .header-tabs li {
   border-bottom: 1px solid #ababab;
   display: inline-block;
-  font-size: 40px;
+  font-size: 50px;
   font-weight: 200;
-  margin: 10px 20px;
+  margin: 10px 20px 10px 0px;
 }
 #dropdown-profile li a {
   color: #7a7a7a;
