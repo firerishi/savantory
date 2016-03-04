@@ -107,9 +107,17 @@ nav {
       color: #898989;
       margin-bottom: 10px;
     }
-    .chip {
-      color: #f7f7f7;
-      font-weight: 300;
+    .card-action {
+      .chip {
+        color: #f7f7f7;
+        font-weight: 300;
+        &:hover {
+          cursor: pointer;
+        }
+        &:active {
+          transform: scale(.8,.8);
+        }
+      }
     }
     a.btn-floating {}
     .book-placeholder {

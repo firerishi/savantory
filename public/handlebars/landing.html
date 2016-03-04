@@ -66,7 +66,7 @@
           <h5 class="card-title">{{name}}</h5> 
           <h6>{{author}}</h6>
         </div>
-        <div class="card-action">
+        <div class="card-action" data-name="{{name}}" data-author="{{author}}" data-read="{{read}}" data-reading="{{reading}}" data-key="{{key}}">
           {{#if read}}
           <div class="chip deep-purple darken-1">Read</div>
           {{/if}}
@@ -109,7 +109,7 @@
   </div>
 </div>
 
-<div id="user-uid" style="display: none">{{user.uid}}</div>
+<div id="user-uid" style="display: none">{{#if user.uid}}{{user.uid}}{{else}}{{user}}{{/if}}</div>
 
 <div id="add-book-modal" class="modal">
   <div class="modal-content">
@@ -117,10 +117,12 @@
     <form class="col s12">
       <div class="row">
         <div class="input-field col s6">
+          <i class="fa fa-book prefix"></i>
           <input id="book-name" type="text" class="validate">
           <label for="book-name">Name</label>
         </div>
         <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
           <input id="book-author" type="text" class="validate">
           <label for="book-author">Author</label>
         </div>

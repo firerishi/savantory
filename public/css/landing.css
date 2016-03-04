@@ -85,9 +85,15 @@ nav ul a {
   color: #898989;
   margin-bottom: 10px;
 }
-.books-shelf-grid .book-grid .chip {
+.books-shelf-grid .book-grid .card-action .chip {
   color: #f7f7f7;
   font-weight: 300;
+}
+.books-shelf-grid .book-grid .card-action .chip:hover {
+  cursor: pointer;
+}
+.books-shelf-grid .book-grid .card-action .chip:active {
+  transform: scale(0.8, 0.8);
 }
 .books-shelf-grid .book-grid .book-placeholder {
   background: #CDCDCD;

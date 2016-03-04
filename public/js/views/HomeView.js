@@ -11,7 +11,45 @@ define([
     el: "#main-content",
 
     events: {
-      'click #save-add-book': 'addBook'
+      'click #save-add-book': 'addBook',
+      'click .card-action': 'changeReadStatus'
+    },
+
+    changeReadStatus: function(e) {
+      var $target = $(e.target),
+        $currentTarget = $(e.currentTarget),
+        user = $('#user-uid').text(),
+        ref = new Firebase("https://savantory.firebaseio.com"),
+        name, author, read, reading, key,
+        that = this;
+
+      if ($target.hasClass('chip')) {
+        name = $currentTarget.data('name');
+        author = $currentTarget.data('author');
+        read = $currentTarget.data('read');
+        reading = $currentTarget.data('reading');
+        key = $currentTarget.data('key');
+
+        // console.log(name, author, !read, !reading, key);
+
+        ref.child("books").child(user).child(key).update({
+          read: !read,
+          reading: !reading
+        }, function() {
+          // that.renderBooksUpdate(user);
+          $currentTarget.data('read', !read);
+          $currentTarget.data('reading', !reading);
+          if (!read) {
+            $target.addClass('deep-purple darken-1');
+            $target.removeClass('orange darken-1');
+            $target.text('Read');
+          } else {
+            $target.removeClass('deep-purple darken-1');
+            $target.addClass('orange darken-1');
+            $target.text('Reading');
+          }
+        })
+      }
     },
 
     addBook: function() {
@@ -70,6 +108,41 @@ define([
       });
     },
 
+    renderBooksUpdate: function(user) {
+      var template = null,
+        ref = new Firebase("https://savantory.firebaseio.com/books/"+user),
+        books = [], bookItem = {};
+
+      ref.on("value", function(snapshot) {
+        books = [];
+        snapshot.forEach(function(book){
+          // console.log(book.val());
+          // console.log(book.key());
+          bookItem = book.val();
+          bookItem.key = book.key();
+          books.push(bookItem);
+        })
+        
+        // console.log(books);
+
+        template = Handlebars.compile(homeHB);
+        $("#main-content").html(template({
+          user: user,
+          books: books
+        }));
+
+        new Masonry('.book-grid', {
+          itemSelector: '.grid-item'
+        });
+
+        $('.dropdown-button').dropdown({
+          belowOrigin: true
+        });
+
+        $('.modal-trigger').leanModal();
+      });
+    },
+
     renderBooks: function(user) {
       var template = null,
         ref = new Firebase("https://savantory.firebaseio.com"),
@@ -80,9 +153,10 @@ define([
       var refBooks = new Firebase("https://savantory.firebaseio.com/books/"+user.uid);
       refBooks.on("child_added", function(snapshot, prevChildKey) {
         var newPost = snapshot.val();
+        newPost.key = snapshot.key();
         // console.log("books: " + newPost.name);
         books.push(newPost);
-        // console.log(books);
+        // console.log(newPost);
 
         template = Handlebars.compile(homeHB);
         $("#main-content").html(template({
